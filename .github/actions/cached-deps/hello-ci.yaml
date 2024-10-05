@@ -2,9 +2,37 @@ name: Hello CI
 on: push
 
 jobs:
+  Lint:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+    - name: Lint
+      run: echo "Linting..."
+
+  
+  Test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+    - name: Test
+      run: echo "Testing..."
+
+      
   build:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
     - name: Hello CI
       run: echo "Hello CI"
